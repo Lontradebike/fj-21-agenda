@@ -2,11 +2,13 @@ package br.com.caelum.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -50,7 +52,13 @@ public class AdicionaContatoServlet extends HttpServlet {
         contato.setDataNascimento(dataNascimento);
 
         
-        ContatoDao dao = new ContatoDao();
+        Connection connection = (Connection) request.getAttribute("conexao");
+		ContatoDao dao = new ContatoDao();
+		dao.adiciona(contato);
+
+		RequestDispatcher rd = request
+				.getRequestDispatcher("/WEB-INF/jsp/contato-adicionado.jsp");
+		rd.forward(request, response);
         dao.adiciona(contato);
 
         out.println("<html>");

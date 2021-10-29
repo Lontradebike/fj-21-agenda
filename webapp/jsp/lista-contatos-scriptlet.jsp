@@ -1,20 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page
-	import="java.util.*, br.com.caelum.agenda.dao.*, br.com.caelum.jdbc.modelo.*"%>
+	import="java.util.*,
+				br.com.caelum.agenda.dao.*,
+				br.com.caelum.jdbc.modelo.*"%>
 <!DOCTYPE html>
 <html>
-
-  
 <head>
-<meta charset="ISO-8859-1">
-<title>Lista de contatos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FJ21-Agenda: Lista de Contatos</title>
 </head>
 <body>
-<table>
+	<table>
 		<thead>
 			<tr>
 				<th>Id</th>
